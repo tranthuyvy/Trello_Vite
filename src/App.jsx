@@ -3,7 +3,6 @@ import AccessAlarmIcon from '@mui/icons-material/AccessAlarm'
 import HomeIcon from '@mui/icons-material/Home'
 import { pink } from '@mui/material/colors'
 
-
 function App() {
 
   return (
