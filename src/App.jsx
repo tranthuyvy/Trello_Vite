@@ -2,13 +2,17 @@ import Button from '@mui/material/Button'
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm'
 import HomeIcon from '@mui/icons-material/Home'
 import { pink } from '@mui/material/colors'
+import Typography from '@mui/material/Typography'
 
 function App() {
 
   return (
     <>
       <div>hello, ttv</div>
-      <Button variant="contained">Hello world</Button>
+
+      <Typography variant='body2' color='text.secondary'>Test</Typography>
+
+      <Button variant="contained">Hello</Button>
 
       <br />
       <AccessAlarmIcon />
