@@ -8,7 +8,6 @@ import Tooltip from '@mui/material/Tooltip'
 
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import AppsIcon from '@mui/icons-material/Apps'
-import SearchIcon from '@mui/icons-material/Search'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 
 import ModeSelect from '~/components/ModeSelect'
