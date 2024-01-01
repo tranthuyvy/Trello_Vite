@@ -6,20 +6,20 @@ const theme = extendTheme({
     appBarHeight: '58px',
     boardBarHeight: '60px'
   },
-  colorSchemes: {
-    light: {
-      palette: {
-        primary: teal,
-        secondary: teal
-      }
-    },
-    dark: {
-      palette: {
-        primary: cyan,
-        secondary: cyan
-      }
-    }
-  },
+  // colorSchemes: {
+  //   light: {
+  //     palette: {
+  //       primary: teal,
+  //       secondary: teal
+  //     }
+  //   },
+  //   dark: {
+  //     palette: {
+  //       primary: cyan,
+  //       secondary: cyan
+  //     }
+  //   }
+  // },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -48,7 +48,7 @@ const theme = extendTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: ({ theme }) => ({
-          color: theme.palette.primary.main,
+          // color: theme.palette.primary.main,
           fontSize: '0.875rem'
         })
       }
@@ -56,19 +56,19 @@ const theme = extendTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         root: ({ theme }) => ({
-          color: theme.palette.primary.main,
+          // color: theme.palette.primary.main,
           fontSize: '0.875rem',
-          '.MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.palette.primary.light
-          },
-          '&:hover': {
-            '.MuiOutlinedInput-notchedOutline': {
-              borderColor: theme.palette.primary.main
-            }
-          },
-          '& fieldset': {
-            borderWidth: '1px !important'
-          }
+          // '.MuiOutlinedInput-notchedOutline': {
+          //   borderColor: theme.palette.primary.light
+          // },
+          // '&:hover': {
+          //   '.MuiOutlinedInput-notchedOutline': {
+          //     borderColor: theme.palette.primary.main
+          //   }
+          // },
+          '& fieldset': { borderWidth: '1px !important' },
+          '&:hover fieldset': { borderWidth: '2px !important' },
+          '.Mui-focused fieldset': { borderWidth: '2px !important' }
         })
       }
     }

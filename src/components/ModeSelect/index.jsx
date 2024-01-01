@@ -26,6 +26,7 @@ function ModeSelect() {
         onChange={handleChange}
         IconComponent='null'
         sx={{
+          color: 'white',
           '& fieldset': {
             border: '0px !important'
           }
