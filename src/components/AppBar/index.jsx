@@ -34,7 +34,7 @@ function AppBar() {
       justifyContent: 'space-between',
       gap: 2,
       overflowX: 'auto',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2f3542' : '#d35400')
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2F2F2F' : '#192a56')
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <AppsIcon sx={{ color: 'white', cursor: 'pointer' }} />
@@ -105,7 +105,15 @@ function AppBar() {
         />
 
         <Tooltip title="Notification">
-          <Badge color='success' variant="dot" sx={{ cursor: 'pointer' }}>
+          <Badge
+            variant="dot"
+            sx={{
+              cursor: 'pointer',
+              '& .MuiBadge-anchorOriginTopRight': {
+                backgroundColor: 'cyan'
+              }
+            }}
+          >
             <NotificationsNoneIcon sx={{ color: 'white' }} />
           </Badge>
         </Tooltip>

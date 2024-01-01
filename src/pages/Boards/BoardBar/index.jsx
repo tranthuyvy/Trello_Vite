@@ -13,16 +13,16 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 
 const CHIP_STYLES = {
-  color: 'primary.main',
+  color: '#273c75',
   bgcolor: 'white',
   border: 'none',
   paddingX: '5px',
   borderRadius: '5px',
   '& .MuiSvgIcon-root': {
-    color: 'primary.main'
+    color: '#273c75'
   },
   '&:hover': {
-    bgcolor: 'primary.50'
+    bgcolor: '#CECECE'
   }
 }
 
@@ -36,7 +36,8 @@ function BoardBar() {
       justifyContent: 'space-between',
       gap: 2,
       overflow: 'auto',
-      borderTop: '1px solid #00bfa5'
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#3d3d3d' : '#273c75'),
+      borderBottom: '1px solid white'
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }} >
         <Chip
@@ -75,14 +76,27 @@ function BoardBar() {
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }} >
-        <Button variant='outlined' startIcon={<PersonAddIcon />}>Invite</Button>
+        <Button
+          variant='outlined'
+          startIcon={<PersonAddIcon />}
+          sx={{
+            color: 'white',
+            borderColor: 'white',
+            '&:hover': {
+              borderColor: 'white'
+            }
+          }}
+        >
+          Invite
+        </Button>
         <AvatarGroup
           max={3}
           sx={{
             '&. MuiAvatar-root': {
               width: 34,
               height: 34,
-              fontSize: 16
+              fontSize: 16,
+              border: 'none'
             }
           }}
         >
@@ -92,7 +106,7 @@ function BoardBar() {
               src="https://st.depositphotos.com/2101611/4338/v/450/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg"
             />
           </Tooltip>
-          <Tooltip title='tranthuyvy'>
+          <Tooltip title='ttv'>
             <Avatar
               alt="TranThuyVy"
               src="https://img.hoidap247.com/picture/question/20200508/large_1588936738888.jpg"
