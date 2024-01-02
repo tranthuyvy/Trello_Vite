@@ -12,6 +12,8 @@ import BoltIcon from '@mui/icons-material/Bolt'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 
+import { capitalizeFirstLetter } from '~/utils/formatters'
+
 const CHIP_STYLES = {
   color: '#273c75',
   bgcolor: 'white',
@@ -26,7 +28,7 @@ const CHIP_STYLES = {
   }
 }
 
-function BoardBar() {
+function BoardBar({ board }) {
   return (
     <Box px={2} sx={{
       width: '100%',
@@ -43,14 +45,14 @@ function BoardBar() {
         <Chip
           sx={CHIP_STYLES}
           icon={<DashboardIcon />}
-          label="TranThuyVy"
+          label={board?.title}
           clickable
         />
 
         <Chip
           sx={CHIP_STYLES}
           icon={<VpnLockIcon />}
-          label="Public/Private Workspace"
+          label={capitalizeFirstLetter(board?.type)}
           clickable
         />
 
