@@ -78,7 +78,7 @@ function BoardContent({ board }) {
         let newCardIndex
         const isBelowOverItem = active.rect.current.translated &&
           active.rect.current.translated.top > over.rect.top + over.rect.height
-        const modifier = isBelowOverItem ? 1 : 0;
+        const modifier = isBelowOverItem ? 1 : 0
 
         newCardIndex = overCardIndex >= 0 ? overCardIndex + modifier : overColumn?.cards?.length + 1
 
@@ -110,7 +110,7 @@ function BoardContent({ board }) {
 
   const handleDragEnd = (event) => {
     if (activeDragItemType === ACTIVE_DRAG_ITEM_TYPE.CARD) {
-      console.log('handleCard')
+      // console.log('handleCard')
       return
     }
 
