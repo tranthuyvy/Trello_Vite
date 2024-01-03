@@ -1,0 +1,4 @@
+-- Nếu như sử dụng PointerSensor mặc định thì phải kết hợp thuộc tính CSS touch-action:'none'
+ở những phần từ kéo thả ~ nhưng còn bug
+-- Ưu tiên sử dụng kết hợp 2 loại sensors là mouse và touch để có trải nghiệm trên mobile tốt nhất,
+không bị bug.

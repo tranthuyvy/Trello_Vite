@@ -4,7 +4,8 @@ import { mapOrder } from '~/utils/sorts'
 
 import {
   DndContext,
-  PointerSensor,
+  MouseSensor,
+  TouchSensor,
   useSensor,
   useSensors
 } from '@dnd-kit/core'
@@ -13,8 +14,13 @@ import { useEffect, useState } from 'react'
 
 function BoardContent({ board }) {
   // https://docs.dndkit.com/api-documentation/sensors
-  const pointerSensor = useSensor(PointerSensor, { activationConstraint: { distance: 10 } })
-  const mySensors = useSensors(pointerSensor)
+
+  // Chuột di chuyển 10px thì => gọi event, fix TH click
+  const mouseSensor = useSensor(MouseSensor, { activationConstraint: { distance: 10 } })
+  // Nhấn giữ 250ms và dung sai cảm ứng 500 => gọi event
+  const touchSensor = useSensor(TouchSensor, { activationConstraint: { delay: 250, tolerance: 500 } })
+
+  const mySensors = useSensors(mouseSensor, touchSensor)
 
   const [orderedColumns, setOrderedColumns] = useState([])
 
@@ -23,7 +29,6 @@ function BoardContent({ board }) {
   }, [board])
 
   const handleDragEnd = (event) => {
-    console.log('handleDragEnd', event)
     const { active, over } = event
 
     // Cần đảm bảo nếu không tồn tại active hoặc over (khi kéo ra khỏi phạm vi container) thì không làm gì (tránh crash trang)
