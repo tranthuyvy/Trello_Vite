@@ -2,11 +2,20 @@ import Box from '@mui/material/Box'
 import ListColumns from './ListColumns/ListColumns'
 import { mapOrder } from '~/utils/sorts'
 
-import { DndContext } from '@dnd-kit/core'
+import {
+  DndContext,
+  PointerSensor,
+  useSensor,
+  useSensors
+} from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
 import { useEffect, useState } from 'react'
 
 function BoardContent({ board }) {
+  // https://docs.dndkit.com/api-documentation/sensors
+  const pointerSensor = useSensor(PointerSensor, { activationConstraint: { distance: 10 } })
+  const mySensors = useSensors(pointerSensor)
+
   const [orderedColumns, setOrderedColumns] = useState([])
 
   useEffect(() => {
@@ -36,7 +45,7 @@ function BoardContent({ board }) {
   }
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
+    <DndContext onDragEnd={handleDragEnd} sensors={mySensors}>
       <Box sx={{
         backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#3d3d3d' : '#273c75'),
         width: '100%',
