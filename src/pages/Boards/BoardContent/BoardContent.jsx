@@ -11,9 +11,7 @@ import {
   DragOverlay,
   defaultDropAnimationSideEffects,
   closestCorners,
-  closestCenter,
   pointerWithin,
-  rectIntersection,
   getFirstCollision
 } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
@@ -231,17 +229,16 @@ function BoardContent({ board }) {
       return closestCorners({ ...args })
     }
     const pointerIntersections = pointerWithin(args)
-    // if (!pointerIntersections?.length) return
-    const intersections = !!pointerIntersections?.length
-      ? pointerIntersections
-      : rectIntersection(args)
 
-    let overId = getFirstCollision(intersections, 'id')
+    //Fix bug flickering của thư viện dnd-kit: kéo card có image cover lớn và kéo ra khỏi khu vực kéo thả
+    if (!pointerIntersections?.length) return
+
+    let overId = getFirstCollision(pointerIntersections, 'id')
     if (overId) {
       const checkColumn = orderedColumns.find(column => column._id === overId)
 
       if (checkColumn) {
-        overId = closestCenter({
+        overId = closestCorners({
           ...args,
           droppableContainers: args.droppableContainers.filter(container => {
             return (container.id !== overId) && (checkColumn?.cardOrderIds?.includes(container.id))
