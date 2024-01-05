@@ -2,3 +2,6 @@
 ở những phần từ kéo thả ~ nhưng còn bug
 -- Ưu tiên sử dụng kết hợp 2 loại sensors là mouse và touch để có trải nghiệm trên mobile tốt nhất,
 không bị bug.
+-- Thuật toán phát hiện va chạm (nếu không có nó thì card với cover lớn sẽ không kéo qua Column được vì lúc này nó đang bị conflict giữa card và column) => dùng closestCorners thay vì closestCenter
+https://docs.dndkit.com/api-documentation/context-provider/collision-detection-algorithms
+=> NHƯNG nếu chỉ dùng closestCorners sẽ có bug flickering + sai lệch dữ liệu
