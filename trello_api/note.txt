@@ -1,0 +1,3 @@
+-- Phải sử dụng Ctrl+C để ngắt chương trình.
+-- Dùng lệnh npx kill-port 8081 để ngắt port
+-- Để sử dụng import thay vì require thì trong package.json thêm dòng "type":"module"
