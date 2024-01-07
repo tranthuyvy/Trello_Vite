@@ -7,6 +7,7 @@ const hostname = 'localhost'
 const port = 8081
 
 app.get('/', (req, res) => {
+  // eslint-disable-next-line no-console
   console.log(mapOrder(
     [{ id: 'id-1', name: 'One' },
       { id: 'id-2', name: 'Two' },
