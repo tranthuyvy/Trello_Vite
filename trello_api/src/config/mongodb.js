@@ -1,5 +1,3 @@
-const MONGODB_URI='mongodb+srv://ttvthuyvy1544:9xRcbF5KLbjxRxv6@cluster-tranthuyvy.e7wwmxh.mongodb.net/?retryWrites=true&w=majority'
-const DATABASE_NAME='trello'
 
 import { MongoClient, ServerApiVersion } from 'mongodb'
 
