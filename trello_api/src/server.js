@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import express from 'express'
-import { CONNECT_DB, GET_DB } from './config/mongodb'
+import exitHook from 'async-exit-hook'
+import { CONNECT_DB, GET_DB, CLOSE_DB } from './config/mongodb'
 
 const START_SERVER = () => {
   const app = express()
@@ -16,6 +17,13 @@ const START_SERVER = () => {
 
   app.listen(port, hostname, () => {
     console.log(`Server is running at http://${hostname}:${port}/`)
+  })
+
+  //Thực hiện cleanup trước khi dừng server
+  //https://stackoverflow.com/questions/14031763/doing-a-cleanup-action-just-before-node-js-exits
+  exitHook(() => {
+    console.log('Close Connect')
+    CLOSE_DB()
   })
 }
 
