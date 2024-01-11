@@ -1,1 +1,4 @@
-Dùng MongoDB Node.js Driver
+Dùng MongoDB Node.js Driver thay vì Mongoose
+Không nên có ý nghĩa chỉ Validate cho FE, BE thì không
+Validations using joi
+Việc chỉ định abortEarly:false để trả về tất cả lỗi validation
