@@ -45,7 +45,6 @@ const Register = () => {
 
     setLoading(true)
 
-
     setLoading(false)
     alert('Registration successful!')
 
