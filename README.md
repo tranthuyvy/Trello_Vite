@@ -8,7 +8,11 @@
 
 <div align=center>
     <a href="https://ttv-trello.vercel.app/">
-    <img src="trello_dark.png" /></a>
+        <img src="./trello_web/public/trello_dark.png" />
+    </a>
+    <a href="https://ttv-trello.vercel.app/">
+        <img src="./trello_web/public/trello_light.png" />
+    </a>
 </div>
 
 <br/>
